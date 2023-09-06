@@ -29,8 +29,8 @@ public class Java8Practice {
         el.add(new Employee(277, "Anuj Chettiar", 31, "Male", "Product Development", 2012, 35700.0));
     //I want employee name based on department using java 8 streams
 
-//        el.stream().filter(x->x.getDepartment().equals("HR")).map(Employee::getName).filter(x->x.startsWith("J"))
-//                .forEach(System.out::println);
+        el.stream().filter(x->x.getDepartment().equals("HR")).map(Employee::getName).filter(x->x.startsWith("J"))
+                .forEach(System.out::println);
 
 
         el.stream().collect(Collectors.groupingBy(Employee::getDepartment)).forEach((department,employee)->
