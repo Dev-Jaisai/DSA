@@ -31,7 +31,7 @@ public class CountOccurenceOfSubString3 {
 //        System.out.println(newSubString+" "+count1);
 
 
-        String newName = "Geetanjali";
+        String newName = "Jaisasi";
         String newSubString = "ee";
 
         long count1 = newName.split(newSubString, -1).length - 1;

@@ -1,24 +1,25 @@
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class SecondLargestInArray {
 
     public static void main(String[] args) {
 
-        int [] num={10,20,30,56,60};
+        int [] num={30,15,7,10,20,30,30,56,60};
 
-        int largest= Integer.MIN_VALUE;
-        int secondLargest=Integer.MIN_VALUE;
-
+        int largest= 0;
+        int secondLargest=0;
+        int thirdLargest=0;
         for (int i=0;i<num.length;i++){
             if (num[i]>largest){
-                secondLargest=largest;
-                largest=num[i];
-                
 
-               } else if (num[i]>secondLargest&&num[i]!=largest) {
-                secondLargest=num[i];
-                
-            }
+                largest = num[i];
+               }
         }
-        System.out.println(secondLargest);
+        System.out.println(largest);
+
+        Integer secondMax = Arrays.stream(num).boxed().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
+        System.out.println(secondMax);
     }
 }
 //public class ThirdLargestElement {

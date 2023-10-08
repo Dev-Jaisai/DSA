@@ -19,7 +19,6 @@ public class FirstNonRepeatingChar {
                 break; // Found the first non-repeating character, no need to continue checking
             }
         }
-
         System.out.println(firstNonRepeatingChar);
     }
 }

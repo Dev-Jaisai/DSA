@@ -1,32 +1,45 @@
 package Interview;
 
 import java.util.*;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Demo1 {
-    public static void main(String[] args) {
-        //want remove 7 from int [] arr
-       int [] arr={1,2,0,6,5,7};
 
-       int rem=0;
-       int index=0;
+    static class Student{
+        String name;
 
-       int [] newArr= new int [arr.length];
-
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i]!=rem){
-                newArr[index]=arr[i];
-                index++;
-            }
-
+        public Student(String name) {
+            this.name = name;
         }
-        // Create a new array of the correct size and copy elements
-        int[] finalArr = Arrays.copyOf(newArr, index);
 
-        System.out.println(Arrays.toString(finalArr));
+        @Override
+        public String toString() {
+            return "Student{" +
+                    "name='" + name + '\'' +
+                    '}';
+        }
+
+
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(name);
+        }
     }
-}
+    public static void main(String[] args) {
 
+    HashMap<Student,Integer> hm= new HashMap<>();
+    hm.put(new Student("jaisai"),1000);
+        hm.put(new Student("jaisai"),1000);
+        hm.put(new Student("jaisai"),1000);
+
+        for (Map.Entry h:hm.entrySet()) {
+            System.out.println(h.getKey()+" "+h.getValue());
+        }
+
+    }
+
+
+}

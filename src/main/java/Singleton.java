@@ -14,8 +14,4 @@ public class Singleton {
         return instance;
     }
 
-    // Other methods of the singleton class
-    public void doSomething() {
-        System.out.println("Singleton class doing something.");
-    }
 }
