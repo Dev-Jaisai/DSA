@@ -1,5 +1,9 @@
 package Strings.SortBasedQuestion;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.stream.Collectors;
+
 public class SortStringBasedOnLength {
     public static void main(String[] args) {
         String name="i love my country";
@@ -19,5 +23,10 @@ public class SortStringBasedOnLength {
         }
 
         System.out.println(String.join(" ",words));
+
+        //2nd way to sort strings based on length
+
+        String sortedStringBasedOnLength = Arrays.stream(name.split(" ")).sorted(Comparator.comparingInt(String::length)).collect(Collectors.joining(" "));
+        System.out.println(sortedStringBasedOnLength);
     }
 }

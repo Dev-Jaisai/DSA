@@ -1,8 +1,11 @@
 package Strings.SortBasedQuestion;
 
-public class SortStringBasecOnAlphabates {i
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
+public class SortStringBasecOnAlphabates {
     public static void main(String[] args) {
-        String name="i love my countr";
+        String name="i love my country";
         String [] words=name.split(" ");
 
         for (int i = 0; i <words.length-1 ; i++) {
@@ -16,6 +19,10 @@ public class SortStringBasecOnAlphabates {i
         }
 
         System.out.println(String.join(" ",words));
+        //2nd way to use streams
+
+        String sotedString = Arrays.stream(name.split(" " )).sorted().collect(Collectors.joining(" "));
+        System.out.println(sotedString);
     }
 }
 
