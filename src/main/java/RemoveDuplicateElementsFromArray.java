@@ -22,7 +22,6 @@ public class RemoveDuplicateElementsFromArray {
         }
 
 
-
         System.out.println("Array with duplicate integers removed: " + Arrays.toString(Arrays.copyOf(temp, index)));
             Arrays.stream(num).distinct().sorted().forEach(System.out::println);
     }

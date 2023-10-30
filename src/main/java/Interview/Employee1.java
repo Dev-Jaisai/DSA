@@ -1,20 +1,15 @@
 package Interview;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+public class Employee1 {
+    public   String name;
 
-import java.util.Objects;
+    public   int age;
 
+    public  int salary;
 
-public class Employee {
-    public String name;
+    public State state;
 
-    public int age;
-
-    public int salary;
-
-    public String getName() {
+    public String getName(String jaisai) {
         return name;
     }
 
@@ -38,31 +33,28 @@ public class Employee {
         this.salary = salary;
     }
 
-    public Employee(String name, int age, int salary) {
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public Employee1(String name, int age, int salary, State state) {
         this.name = name;
         this.age = age;
         this.salary = salary;
+        this.state = state;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "Employee1{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", salary=" + salary +
+                ", state=" + state +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return Objects.equals(name, employee.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return 0;
     }
 }

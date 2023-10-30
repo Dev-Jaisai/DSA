@@ -1,5 +1,12 @@
 package Strings;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
 public class FirstNonRepeatingChar {
     public static void main(String[] args) {
         String name = "example";
@@ -20,5 +27,24 @@ public class FirstNonRepeatingChar {
             }
         }
         System.out.println(firstNonRepeatingChar);
+//        HashMap<Character,Integer> hm= new LinkedHashMap<>();
+//char firstNonRepeatingCharByHashmap='\0';
+//        for(char c:name.toCharArray()){
+//            hm.put(c,hm.getOrDefault(c,0)+1);
+//        }
+//        for (char c:name.toCharArray()){
+//            if (hm.get(c)==1){
+//                firstNonRepeatingCharByHashmap=c;
+//                break;
+//            }
+//        }
+//        System.out.println(firstNonRepeatingCharByHashmap);
+
+        Map.Entry<String, Long> stringLongEntry = Arrays.stream(name.split("")).collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+                .entrySet().stream().filter(x -> x.getValue() == 1).findFirst().get();
+        System.out.println(stringLongEntry.getKey());
+
     }
+
+
 }

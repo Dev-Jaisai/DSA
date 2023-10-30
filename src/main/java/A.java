@@ -1,8 +1,5 @@
 public class A {
-
-    public A(){
-        System.out.println("From Parent class constructor");
+    void m1(Number n) {
+        System.out.println("m1-P");
     }
-
 }
-

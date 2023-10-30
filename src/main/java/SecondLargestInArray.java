@@ -12,7 +12,6 @@ public class SecondLargestInArray {
         int thirdLargest=0;
         for (int i=0;i<num.length;i++){
             if (num[i]>largest){
-
                 largest = num[i];
                }
         }
@@ -50,3 +49,17 @@ public class SecondLargestInArray {
 //        }
 //    }
 //}
+//int[] num = {100, 2, 6, 5, 58, 46, 8};
+//    // Find the largest and second largest numbers
+//    int largest = Integer.MIN_VALUE;
+//    int seconLargest = Integer.MIN_VALUE;
+//
+//        for (int i = 0; i < num.length; i++) {
+//        if (num[i] > largest) {
+//        largest = num[i];
+//        } else if (num[i] > seconLargest) {
+//        seconLargest = num[i];
+//        }
+//        }
+//
+//        System.out.println(seconLargest);

@@ -5,8 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class ListToMap {
@@ -29,6 +31,11 @@ public class ListToMap {
       Map<Integer,String> newMap=al.stream().collect(Collectors.toMap(Employee::getId,Employee::getName));
 
 
-        System.out.println(newMap);
+       // System.out.println(newMap);
+            List<Integer> l= Arrays.asList(1,2,3,6,4,5);
+
+        Map<Integer, Integer> collect = l.stream().collect(Collectors.toMap(key->key*2, x -> x));
+        System.out.println(collect);
+
     }
 }

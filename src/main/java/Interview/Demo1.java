@@ -1,45 +1,33 @@
 package Interview;
 
-import java.util.*;
-import java.util.function.Function;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class Demo1 {
-
-    static class Student{
-        String name;
-
-        public Student(String name) {
-            this.name = name;
-        }
-
-        @Override
-        public String toString() {
-            return "Student{" +
-                    "name='" + name + '\'' +
-                    '}';
-        }
-
-
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(name);
-        }
-    }
     public static void main(String[] args) {
+        String name = "jaisai sarkate new zero";
+        List<String> sortedStringBasedOnLength = Arrays.stream(name.split(" ")).sorted(Comparator.comparingInt(String::length)).collect(Collectors.toList());
 
-    HashMap<Student,Integer> hm= new HashMap<>();
-    hm.put(new Student("jaisai"),1000);
-        hm.put(new Student("jaisai"),1000);
-        hm.put(new Student("jaisai"),1000);
+        System.out.println(sortedStringBasedOnLength);
 
-        for (Map.Entry h:hm.entrySet()) {
-            System.out.println(h.getKey()+" "+h.getValue());
+        List<String> sortedStringBasedOnName = Arrays.stream(name.split(" ")).sorted().collect(Collectors.toList());
+        System.out.println(sortedStringBasedOnName);
+
+       String [] words= name.split(" ");
+
+        for (int i = 0; i <words.length -1; i++) {
+            for (int j = i+1; j <words.length; j++) {
+                if (words[i].compareTo(words[j])>0){
+                    String temp=words[i];
+                    words[i]=words[j];
+                    words[j]=temp;
+
+                }
+
+            }
         }
-
+        System.out.println(String.join(" ",words));
     }
-
-
 }
